@@ -9,8 +9,12 @@ print(first_name.casefold())
 print(first_name.replace("f", "t"))
 
 # Count how many characters in stones are also in jewels.
+def count_jewels_in_stones(jewels: str, stones: str) -> int:
+    count = 0
+    for stone in stones:
+        if stone in jewels:
+            count += 1
+    return count
 
-def numJewelsInStones(self, jewels: str, stones: str) -> int:
-    return sum(stones.count(j) for j in jewels)
-
-print (numJewelsInStones("hello", "masfa"))
+count = count_jewels_in_stones("aA", "aAAbbbb")
+print(f"Count: {count}")
